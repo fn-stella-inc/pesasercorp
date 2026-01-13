@@ -1,5 +1,5 @@
-// -- exportar todos los componentes ui
-export { Button } from './Button'
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './Card'
-export { Input } from './Input'
-export { Textarea } from './Textarea'
+// -- export all ui components
+export { Button } from './button'
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './card'
+export { Input } from './input'
+export { Textarea } from './textarea'

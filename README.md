@@ -1,36 +1,36 @@
 # -- peruvian sales and services corporation s.a.c.
 
-sitio web corporativo desarrollado con astro, react, tailwind css y componentes estilo shadcn/ui.
+corporate website built with astro, react, tailwind css and shadcn/ui style components.
 
-## -- características
+## -- features
 
-- astro - framework moderno de contenido estático
-- react - componentes interactivos (formulario de contacto)
-- tailwind css - utilidades css de última generación
-- componentes shadcn/ui - ui components elegantes y accesibles
-- lucide react - iconos modernos y consistentes
-- responsive - diseño adaptable a todos los dispositivos
-- animaciones - transiciones suaves y efectos visuales
-- tema moderno - diseño profesional con gradientes y glassmorphism
-- configuración centralizada - archivo config.ts para fácil actualización
+- astro - modern static content framework
+- react - interactive components (contact form)
+- tailwind css - latest generation css utilities
+- shadcn/ui components - elegant and accessible ui components
+- lucide react - modern and consistent icons
+- responsive - adaptable design for all devices
+- animations - smooth transitions and visual effects
+- modern theme - professional design with gradients and glassmorphism
+- centralized configuration - config.ts file for easy updates
 
-## -- instalación
+## -- installation
 
 ```bash
-# -- instalar dependencias
+# -- install dependencies
 npm install
 
-# -- iniciar servidor de desarrollo
+# -- start development server
 npm run dev
 
-# -- construir para producción
+# -- build for production
 npm run build
 
-# -- vista previa de producción
+# -- preview production build
 npm run preview
 ```
 
-## -- estructura del proyecto
+## -- project structure
 
 ```
 /
@@ -39,82 +39,77 @@ npm run preview
 │   └── logo.png
 ├── src/
 │   ├── components/
-│   │   ├── ui/                    # -- componentes shadcn-style
-│   │   │   ├── Button.tsx
-│   │   │   ├── Card.tsx
-│   │   │   ├── Input.tsx
-│   │   │   └── Textarea.tsx
-│   │   ├── icons/                 # -- iconos lucide
+│   │   ├── ui/                    # -- shadcn-style components
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── input.tsx
+│   │   │   └── textarea.tsx
+│   │   ├── icons/                 # -- lucide icons
 │   │   │   └── index.ts
-│   │   ├── Header.astro
-│   │   ├── Hero.astro
-│   │   ├── About.astro
-│   │   ├── Services.astro
-│   │   ├── ServiceCard.tsx        # -- tarjeta de servicio react
-│   │   ├── Products.astro
-│   │   ├── Contact.astro
-│   │   ├── ContactForm.tsx        # -- formulario react interactivo
-│   │   └── Footer.astro
+│   │   ├── header.astro
+│   │   ├── hero.astro
+│   │   ├── about.astro
+│   │   ├── services.astro
+│   │   ├── service-card.tsx       # -- react service card
+│   │   ├── products.astro
+│   │   ├── contact.astro
+│   │   ├── contact-form.tsx       # -- interactive react form
+│   │   └── footer.astro
 │   ├── config/
-│   │   └── site.config.ts         # -- configuración centralizada
+│   │   └── site.config.ts         # -- centralized configuration
 │   ├── layouts/
-│   │   └── Layout.astro
+│   │   └── layout.astro
 │   ├── lib/
-│   │   └── utils.ts               # -- utilidad cn() para clases
+│   │   └── utils.ts               # -- cn() utility for classes
 │   ├── pages/
 │   │   └── index.astro
 │   └── styles/
 │       └── global.css
+├── .gitignore
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 ├── tsconfig.json
 └── package.json
 ```
 
-## -- configuración centralizada
+## -- centralized configuration
 
-toda la información de la empresa se encuentra en `src/config/site.config.ts`. aquí puedes actualizar:
+all company information is located in `src/config/site.config.ts`. you can update:
 
-### -- información de la empresa
+### -- company information
+- name and business name
+- ruc and tax data
+- registration dates
+- status and condition
 
-- nombre y razón social
-- ruc y datos tributarios
-- fechas de inscripción
-- estado y condición
-
-### -- información de contacto
-
-- teléfono
+### -- contact information
+- phone
 - whatsapp
 - email
 
-### -- dirección
+### -- address
+- street
+- neighborhood
+- district, province, department
 
-- calle
-- urbanización
-- distrito, provincia, departamento
-
-### -- redes sociales
-
+### -- social media
 - facebook
 - instagram
 - linkedin
 - whatsapp
 
-### -- servicios y productos
-
-- lista de servicios con descripciones
-- catálogo de productos por categoría
+### -- services and products
+- list of services with descriptions
+- product catalog by category
 
 ### -- seo
+- title
+- description
+- keywords
 
-- título
-- descripción
-- palabras clave
+## -- color customization
 
-## -- personalización de colores
-
-edita `tailwind.config.mjs` para cambiar los colores principales:
+edit `tailwind.config.mjs` to change main colors:
 
 ```js
 colors: {
@@ -124,63 +119,59 @@ colors: {
 }
 ```
 
-## -- fuentes
+## -- fonts
 
-las fuentes se cargan desde google fonts en `global.css`:
-
+fonts are loaded from google fonts in `global.css`:
 - display: poppins
 - body: inter
 
-## -- formulario de contacto
+## -- contact form
 
-el formulario actualmente simula el envío. para conectarlo a un backend real:
+the form currently simulates submission. to connect it to a real backend:
 
-1. edita `src/components/ContactForm.tsx`
-2. reemplaza la simulación en `handleSubmit` con tu api
-3. opciones recomendadas:
+1. edit `src/components/contact-form.tsx`
+2. replace the simulation in `handleSubmit` with your api
+3. recommended options:
    - formspree
    - netlify forms
-   - api personalizada
+   - custom api
 
-## -- despliegue
+## -- deployment
 
 ### -- vercel
-
 ```bash
 npm run build
-# -- sube la carpeta dist/
+# -- upload dist/ folder
 ```
 
 ### -- netlify
-
 ```bash
 npm run build
-# -- sube la carpeta dist/
+# -- upload dist/ folder
 ```
 
 ### -- github pages
-
 ```bash
 npm run build
-# -- configura github pages para servir desde dist/
+# -- configure github pages to serve from dist/
 ```
 
-## -- datos de la empresa
+## -- company data
 
-- razon social: peruvian sales and services corporation s.a.c.
+- business name: peruvian sales and services corporation s.a.c.
 - ruc: 20612417327
-- tipo: sociedad anónima cerrada
-- estado: activo - habido
-- ubicacion: jr. huáscar 253, urb. partido alto, san martín - tarapoto
-- actividades:
-  - ciiu 4663: venta al por mayor de materiales de construcción y ferretería
-  - ciiu 4651: venta al por mayor de equipos informáticos
-  - ciiu 6202: consultoría de informática
+- type: sociedad anonima cerrada
+- status: activo - habido
+- location: jr. huascar 253, urb. partido alto, san martin - tarapoto
+- activities:
+  - ciiu 4663: wholesale of construction materials and hardware
+  - ciiu 4651: wholesale of computer equipment
+  - ciiu 6202: it consulting
 
-## -- licencia
+## -- license
 
-este proyecto está desarrollado para peruvian sales and services corporation s.a.c.
+this project is developed for peruvian sales and services corporation s.a.c.
 
 ---
 
-Desarrollado con ❤️ usando Astro + React + Tailwind CSS
+built with astro + react + tailwind css

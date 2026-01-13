@@ -1,8 +1,8 @@
 ---
-// -- sección hero principal con información desde config
+// -- hero section with information from config
 import { siteConfig } from '../config/site.config';
 
-const { empresa, estadisticas } = siteConfig;
+const { company, stats } = siteConfig;
 ---
 
 <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden pt-20">
@@ -29,7 +29,7 @@ const { empresa, estadisticas } = siteConfig;
       <div class="text-center lg:text-left">
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
           <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-          <span class="text-sm text-white/80">RUC: {empresa.ruc}</span>
+          <span class="text-sm text-white/80">RUC: {company.ruc}</span>
         </div>
         
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-6 animate-slide-up">
@@ -41,7 +41,7 @@ const { empresa, estadisticas } = siteConfig;
         </h1>
         
         <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 animate-slide-up animate-delay-200">
-          {empresa.descripcion}
+          {company.description}
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up animate-delay-300">
@@ -58,23 +58,23 @@ const { empresa, estadisticas } = siteConfig;
         
         <!-- stats -->
         <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10 animate-slide-up animate-delay-400">
-          {estadisticas.map((stat) => (
+          {stats.map((stat) => (
             <div class="text-center lg:text-left">
-              <div class="text-3xl md:text-4xl font-bold text-white">{stat.valor}</div>
-              <div class="text-sm text-gray-400">{stat.etiqueta}</div>
+              <div class="text-3xl md:text-4xl font-bold text-white">{stat.value}</div>
+              <div class="text-sm text-gray-400">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
       
-      <!-- visual element con logo -->
+      <!-- visual element with logo -->
       <div class="hidden lg:block relative">
         <div class="relative w-full aspect-square max-w-lg mx-auto">
-          <!-- logo central -->
+          <!-- central logo -->
           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 flex items-center justify-center animate-float shadow-2xl">
             <img 
               src="/logo.png" 
-              alt={empresa.nombre}
+              alt={company.name}
               class="w-48 h-48 object-contain"
             />
           </div>

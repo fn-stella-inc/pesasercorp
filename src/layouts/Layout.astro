@@ -1,5 +1,5 @@
 ---
-// -- layout principal con metadatos desde config
+// -- main layout with metadata from config
 import '../styles/global.css';
 import { siteConfig } from '../config/site.config';
 
@@ -9,8 +9,8 @@ interface Props {
 }
 
 const { 
-  title = siteConfig.seo.titulo, 
-  description = siteConfig.seo.descripcion 
+  title = siteConfig.seo.title, 
+  description = siteConfig.seo.description 
 } = Astro.props;
 ---
 

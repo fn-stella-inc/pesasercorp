@@ -1,11 +1,11 @@
-/* -- importar fuentes de google fonts */
+/* -- import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* -- estilos base */
+/* -- base styles */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -20,9 +20,9 @@
   }
 }
 
-/* -- componentes personalizados */
+/* -- custom components */
 @layer components {
-  /* -- botón primario */
+  /* -- primary button */
   .btn-primary {
     @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white 
            bg-gradient-to-r from-primary-500 to-primary-600 rounded-full
@@ -31,14 +31,14 @@
            shadow-lg hover:shadow-xl;
   }
   
-  /* -- botón secundario */
+  /* -- secondary button */
   .btn-secondary {
     @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold 
            text-primary-600 bg-white border-2 border-primary-500 rounded-full
            hover:bg-primary-50 transform hover:scale-105 transition-all duration-300;
   }
   
-  /* -- botón accent */
+  /* -- accent button */
   .btn-accent {
     @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white 
            bg-gradient-to-r from-accent to-accent-light rounded-full
@@ -47,45 +47,45 @@
            shadow-lg hover:shadow-xl animate-pulse-glow;
   }
   
-  /* -- tarjeta */
+  /* -- card */
   .card {
     @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500
            border border-gray-100 overflow-hidden;
   }
   
-  /* -- tarjeta con hover */
+  /* -- card with hover effect */
   .card-hover {
     @apply hover:-translate-y-2 hover:border-accent/30;
   }
   
-  /* -- título de sección */
+  /* -- section title */
   .section-title {
     @apply text-4xl md:text-5xl font-bold text-navy mb-4;
   }
   
-  /* -- subtítulo de sección */
+  /* -- section subtitle */
   .section-subtitle {
     @apply text-lg text-gray-600 max-w-2xl mx-auto;
   }
   
-  /* -- texto con gradiente */
+  /* -- gradient text */
   .gradient-text {
     @apply bg-gradient-to-r from-primary-500 via-primary-600 to-accent bg-clip-text text-transparent;
   }
   
-  /* -- efecto glass */
+  /* -- glass effect */
   .glass {
     @apply bg-white/80 backdrop-blur-lg border border-white/20;
   }
 }
 
-/* -- utilidades personalizadas */
+/* -- custom utilities */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
   
-  /* -- delays para animaciones */
+  /* -- animation delays */
   .animate-delay-100 { animation-delay: 100ms; }
   .animate-delay-200 { animation-delay: 200ms; }
   .animate-delay-300 { animation-delay: 300ms; }
@@ -94,7 +94,7 @@
   .animate-delay-600 { animation-delay: 600ms; }
 }
 
-/* -- scrollbar personalizado */
+/* -- custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -112,7 +112,7 @@
   background: linear-gradient(to bottom, #1e3a8a, #d97706);
 }
 
-/* -- textura de ruido para fondos */
+/* -- noise texture for backgrounds */
 .noise-bg::before {
   content: '';
   position: absolute;

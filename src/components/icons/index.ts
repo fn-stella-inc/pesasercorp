@@ -1,5 +1,5 @@
-// -- componente wrapper para iconos de lucide
-// -- centraliza el uso de iconos en toda la aplicación
+// -- icons wrapper component using lucide
+// -- centralizes icon usage across the application
 
 import {
   Building2,
@@ -35,10 +35,11 @@ import {
   Zap,
   Users,
   Award,
+  Loader2,
   type LucideIcon,
 } from 'lucide-react';
 
-// -- mapa de iconos disponibles
+// -- icon map for dynamic rendering
 export const iconMap: Record<string, LucideIcon> = {
   Building2,
   Wrench,
@@ -73,9 +74,10 @@ export const iconMap: Record<string, LucideIcon> = {
   Zap,
   Users,
   Award,
+  Loader2,
 };
 
-// -- exportar iconos individualmente para uso directo
+// -- export icons individually for direct use
 export {
   Building2,
   Wrench,
@@ -110,7 +112,8 @@ export {
   Zap,
   Users,
   Award,
+  Loader2,
 };
 
-// -- tipo para props de iconos
+// -- type for icon names
 export type IconName = keyof typeof iconMap;

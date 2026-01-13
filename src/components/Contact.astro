@@ -1,9 +1,9 @@
 ---
-// -- sección de contacto con información desde config
+// -- contact section with information from config
 import { siteConfig } from '../config/site.config';
-import ContactForm from './ContactForm';
+import ContactForm from './contact-form';
 
-const { empresa, contacto, direccion } = siteConfig;
+const { company, contact, address } = siteConfig;
 ---
 
 <section id="contacto" class="py-24 bg-gradient-to-br from-slate-900 via-primary-900 to-navy-dark relative overflow-hidden">
@@ -46,9 +46,9 @@ const { empresa, contacto, direccion } = siteConfig;
             </div>
             <div>
               <h3 class="font-semibold text-white text-lg mb-1">Ubicación</h3>
-              <p class="text-gray-400">{direccion.calle}</p>
-              <p class="text-gray-400">{direccion.urbanizacion}</p>
-              <p class="text-gray-400">{direccion.departamento} - {direccion.distrito}</p>
+              <p class="text-gray-400">{address.street}</p>
+              <p class="text-gray-400">{address.neighborhood}</p>
+              <p class="text-gray-400">{address.department} - {address.district}</p>
             </div>
           </div>
           
@@ -61,8 +61,8 @@ const { empresa, contacto, direccion } = siteConfig;
             </div>
             <div>
               <h3 class="font-semibold text-white text-lg mb-1">Teléfono</h3>
-              <a href={`tel:${contacto.telefono.replace(/\s/g, '')}`} class="text-gray-400 hover:text-accent transition-colors">
-                {contacto.telefono}
+              <a href={`tel:${contact.phone.replace(/\s/g, '')}`} class="text-gray-400 hover:text-accent transition-colors">
+                {contact.phone}
               </a>
             </div>
           </div>
@@ -76,8 +76,8 @@ const { empresa, contacto, direccion } = siteConfig;
             </div>
             <div>
               <h3 class="font-semibold text-white text-lg mb-1">Correo</h3>
-              <a href={`mailto:${contacto.email}`} class="text-gray-400 hover:text-accent transition-colors">
-                {contacto.email}
+              <a href={`mailto:${contact.email}`} class="text-gray-400 hover:text-accent transition-colors">
+                {contact.email}
               </a>
             </div>
           </div>
@@ -91,8 +91,8 @@ const { empresa, contacto, direccion } = siteConfig;
             </div>
             <div>
               <h3 class="font-semibold text-white text-lg mb-1">RUC</h3>
-              <p class="text-gray-400 font-mono">{empresa.ruc}</p>
-              <p class="text-sm text-green-400 mt-1">Estado: {empresa.estado} - {empresa.condicion}</p>
+              <p class="text-gray-400 font-mono">{company.ruc}</p>
+              <p class="text-sm text-green-400 mt-1">Estado: {company.status} - {company.condition}</p>
             </div>
           </div>
         </div>

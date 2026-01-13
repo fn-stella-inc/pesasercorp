@@ -1,9 +1,9 @@
 ---
-// -- sección de servicios con información desde config
+// -- services section with information from config
 import { siteConfig } from '../config/site.config';
-import ServiceCard from './ServiceCard';
+import ServiceCard from './service-card';
 
-const { servicios } = siteConfig;
+const { services } = siteConfig;
 ---
 
 <section id="servicios" class="py-24 bg-gray-50 relative overflow-hidden">
@@ -32,8 +32,8 @@ const { servicios } = siteConfig;
     
     <!-- services grid -->
     <div class="grid md:grid-cols-2 gap-8">
-      {servicios.map((servicio) => (
-        <ServiceCard servicio={servicio} client:load />
+      {services.map((service) => (
+        <ServiceCard service={service} client:load />
       ))}
     </div>
     

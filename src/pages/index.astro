@@ -1,15 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Services from '../components/Services.astro';
-import Products from '../components/Products.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
+// -- main page
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import Hero from '../components/hero.astro';
+import About from '../components/about.astro';
+import Services from '../components/services.astro';
+import Products from '../components/products.astro';
+import Contact from '../components/contact.astro';
+import Footer from '../components/footer.astro';
 ---
 
-<Layout title="PERUVIAN SALES AND SERVICES CORPORATION S.A.C. | Construcción, Ferretería y Tecnología">
+<Layout>
   <Header />
   <main>
     <Hero />
@@ -22,12 +23,12 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style is:global>
-  /* Smooth scrolling for anchor links */
+  /* -- smooth scrolling for anchor links */
   html {
     scroll-padding-top: 80px;
   }
   
-  /* Hide scrollbar for mobile menu animation */
+  /* -- hide scrollbar for mobile menu animation */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }

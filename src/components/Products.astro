@@ -1,27 +1,8 @@
 ---
-// -- sección de productos con información desde config
+// -- products section with information from config
 import { siteConfig } from '../config/site.config';
 
-const { productos } = siteConfig;
-
-// -- definir categorías con iconos
-const categorias = [
-  {
-    titulo: "Construcción",
-    icono: "building",
-    items: productos.construccion
-  },
-  {
-    titulo: "Ferretería",
-    icono: "wrench",
-    items: productos.ferreteria
-  },
-  {
-    titulo: "Tecnología",
-    icono: "monitor",
-    items: productos.tecnologia
-  }
-];
+const { products, productCategories } = siteConfig;
 ---
 
 <section id="productos" class="py-24 bg-white relative overflow-hidden">
@@ -51,43 +32,43 @@ const categorias = [
       </p>
     </div>
     
-    <!-- products categories -->
+    <!-- product categories -->
     <div class="grid lg:grid-cols-3 gap-8">
-      {categorias.map((categoria) => (
+      {productCategories.map((category) => (
         <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
           <!-- category header -->
           <div class="flex items-center gap-4 mb-6 pb-6 border-b border-gray-200">
             <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center text-white shadow-lg">
-              {categoria.icono === 'building' && (
+              {category.icon === 'building' && (
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               )}
-              {categoria.icono === 'wrench' && (
+              {category.icon === 'wrench' && (
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               )}
-              {categoria.icono === 'monitor' && (
+              {category.icon === 'monitor' && (
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               )}
             </div>
-            <h3 class="text-2xl font-bold text-navy">{categoria.titulo}</h3>
+            <h3 class="text-2xl font-bold text-navy">{category.title}</h3>
           </div>
           
           <!-- products list -->
           <ul class="space-y-4">
-            {categoria.items.map((item) => (
+            {products[category.key as keyof typeof products].map((item) => (
               <li class="flex items-center justify-between p-3 rounded-xl hover:bg-primary-50 transition-colors group cursor-pointer">
                 <div class="flex items-center gap-3">
                   <div class="w-2 h-2 bg-accent rounded-full group-hover:scale-150 transition-transform"></div>
-                  <span class="text-gray-700 group-hover:text-primary-600 transition-colors">{item.nombre}</span>
+                  <span class="text-gray-700 group-hover:text-primary-600 transition-colors">{item.name}</span>
                 </div>
                 <span class="text-sm font-medium text-primary-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                  {item.precio}
+                  {item.price}
                 </span>
               </li>
             ))}

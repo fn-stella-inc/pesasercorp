@@ -1,9 +1,9 @@
-// -- componente card estilo shadcn/ui
+// -- card component shadcn/ui style
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-// -- contenedor principal de la tarjeta
-const Card = React.forwardRef<
+// -- main card container
+export const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -18,8 +18,8 @@ const Card = React.forwardRef<
 ))
 Card.displayName = "Card"
 
-// -- encabezado de la tarjeta
-const CardHeader = React.forwardRef<
+// -- card header
+export const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -31,8 +31,8 @@ const CardHeader = React.forwardRef<
 ))
 CardHeader.displayName = "CardHeader"
 
-// -- título de la tarjeta
-const CardTitle = React.forwardRef<
+// -- card title
+export const CardTitle = React.forwardRef<
   HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
@@ -47,8 +47,8 @@ const CardTitle = React.forwardRef<
 ))
 CardTitle.displayName = "CardTitle"
 
-// -- descripción de la tarjeta
-const CardDescription = React.forwardRef<
+// -- card description
+export const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
@@ -60,8 +60,8 @@ const CardDescription = React.forwardRef<
 ))
 CardDescription.displayName = "CardDescription"
 
-// -- contenido de la tarjeta
-const CardContent = React.forwardRef<
+// -- card content
+export const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -69,8 +69,8 @@ const CardContent = React.forwardRef<
 ))
 CardContent.displayName = "CardContent"
 
-// -- pie de la tarjeta
-const CardFooter = React.forwardRef<
+// -- card footer
+export const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
@@ -81,5 +81,3 @@ const CardFooter = React.forwardRef<
   />
 ))
 CardFooter.displayName = "CardFooter"
-
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
