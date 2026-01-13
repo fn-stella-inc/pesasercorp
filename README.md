@@ -1,4 +1,4 @@
-# -- peruvian sales and services corporation s.a.c.
+# -- peruvian sales and services corporation s.a.c. (pesasercorp)
 
 corporate website built with astro, react, tailwind css and shadcn/ui style components.
 
@@ -77,32 +77,38 @@ npm run preview
 all company information is located in `src/config/site.config.ts`. you can update:
 
 ### -- company information
+
 - name and business name
 - ruc and tax data
 - registration dates
 - status and condition
 
 ### -- contact information
+
 - phone
 - whatsapp
 - email
 
 ### -- address
+
 - street
 - neighborhood
 - district, province, department
 
 ### -- social media
+
 - facebook
 - instagram
 - linkedin
 - whatsapp
 
 ### -- services and products
+
 - list of services with descriptions
 - product catalog by category
 
 ### -- seo
+
 - title
 - description
 - keywords
@@ -122,6 +128,7 @@ colors: {
 ## -- fonts
 
 fonts are loaded from google fonts in `global.css`:
+
 - display: poppins
 - body: inter
 
@@ -139,18 +146,21 @@ the form currently simulates submission. to connect it to a real backend:
 ## -- deployment
 
 ### -- vercel
+
 ```bash
 npm run build
 # -- upload dist/ folder
 ```
 
 ### -- netlify
+
 ```bash
 npm run build
 # -- upload dist/ folder
 ```
 
 ### -- github pages
+
 ```bash
 npm run build
 # -- configure github pages to serve from dist/
