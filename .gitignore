@@ -1,0 +1,36 @@
+# -- enviroments
+.env
+.env.*
+!.env.example
+.env.local
+
+# -- dependencies
+node_modules/
+
+# -- astro
+.astro/
+dist/
+
+# -- logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun.lockb
+*.log
+
+# -- build caches
+.cache/
+.vite/
+.turbo/
+
+# -- typescript
+*.tsbuildinfo
+
+# -- editor
+.vscode/
+.idea/
+
+# -- os files
+.DS_Store
+Thumbs.db
