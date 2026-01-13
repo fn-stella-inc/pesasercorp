@@ -1,47 +1,51 @@
 // -- componente de formulario de contacto con iconos lucide
-import React, { useState } from 'react';
-import { Button } from './ui/Button';
-import { Input } from './ui/Input';
-import { Textarea } from './ui/Textarea';
-import { Send, CheckCircle, Loader2 } from 'lucide-react';
+import React, { useState } from "react";
+import { Button } from "./ui/Button";
+import { Input } from "./ui/Input";
+import { Textarea } from "./ui/Textarea";
+import { Send, CheckCircle, Loader2 } from "lucide-react";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    telefono: '',
-    empresa: '',
-    servicio: '',
-    mensaje: ''
+    nombre: "",
+    email: "",
+    telefono: "",
+    empresa: "",
+    servicio: "",
+    mensaje: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // -- simular envío del formulario
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
     setIsSubmitting(false);
     setSubmitted(true);
-    
+
     // -- resetear después de 3 segundos
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
-        nombre: '',
-        email: '',
-        telefono: '',
-        empresa: '',
-        servicio: '',
-        mensaje: ''
+        nombre: "",
+        email: "",
+        telefono: "",
+        empresa: "",
+        servicio: "",
+        mensaje: "",
       });
     }, 3000);
   };
@@ -53,8 +57,12 @@ export function ContactForm() {
         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <CheckCircle className="w-10 h-10 text-green-600" />
         </div>
-        <h3 className="text-2xl font-bold text-green-800 mb-2">¡Mensaje Enviado!</h3>
-        <p className="text-green-600">Nos pondremos en contacto contigo pronto.</p>
+        <h3 className="text-2xl font-bold text-green-800 mb-2">
+          ¡Mensaje Enviado!
+        </h3>
+        <p className="text-green-600">
+          Nos pondremos en contacto contigo pronto.
+        </p>
       </div>
     );
   }
@@ -63,7 +71,10 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid sm:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
+          <label
+            htmlFor="nombre"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Nombre completo *
           </label>
           <Input
@@ -76,9 +87,12 @@ export function ContactForm() {
             placeholder="Tu nombre"
           />
         </div>
-        
+
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Correo electrónico *
           </label>
           <Input
@@ -92,10 +106,13 @@ export function ContactForm() {
           />
         </div>
       </div>
-      
+
       <div className="grid sm:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-2">
+          <label
+            htmlFor="telefono"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Teléfono
           </label>
           <Input
@@ -107,9 +124,12 @@ export function ContactForm() {
             placeholder="+51 999 999 999"
           />
         </div>
-        
+
         <div>
-          <label htmlFor="empresa" className="block text-sm font-medium text-gray-700 mb-2">
+          <label
+            htmlFor="empresa"
+            className="block text-sm font-medium text-gray-700 mb-2"
+          >
             Empresa
           </label>
           <Input
@@ -122,9 +142,12 @@ export function ContactForm() {
           />
         </div>
       </div>
-      
+
       <div>
-        <label htmlFor="servicio" className="block text-sm font-medium text-gray-700 mb-2">
+        <label
+          htmlFor="servicio"
+          className="block text-sm font-medium text-gray-700 mb-2"
+        >
           Servicio de interés *
         </label>
         <select
@@ -143,9 +166,12 @@ export function ContactForm() {
           <option value="otro">Otro</option>
         </select>
       </div>
-      
+
       <div>
-        <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-2">
+        <label
+          htmlFor="mensaje"
+          className="block text-sm font-medium text-gray-700 mb-2"
+        >
           Mensaje *
         </label>
         <Textarea
@@ -158,11 +184,11 @@ export function ContactForm() {
           className="min-h-[150px]"
         />
       </div>
-      
-      <Button 
-        type="submit" 
-        variant="accent" 
-        size="lg" 
+
+      <Button
+        type="submit"
+        variant="accent"
+        size="lg"
         className="w-full"
         disabled={isSubmitting}
       >
