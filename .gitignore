@@ -1,8 +1,8 @@
-# -- enviroments
+# -- environments
 .env
-.env.*
-!.env.example
 .env.local
+.env.*.local
+!.env.example
 
 # -- dependencies
 node_modules/
@@ -34,3 +34,6 @@ bun.lockb
 # -- os files
 .DS_Store
 Thumbs.db
+
+# -- docker
+.docker/

@@ -1,0 +1,44 @@
+# -- dockerignore for peruvian sales web
+# -- exclude files not needed in docker build
+
+# -- dependencies
+node_modules/
+npm-debug.log*
+
+# -- build outputs
+dist/
+.astro/
+
+# -- environment files
+.env
+.env.local
+.env.*.local
+
+# -- git
+.git/
+.gitignore
+
+# -- editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -- os files
+.DS_Store
+Thumbs.db
+
+# -- documentation
+README.md
+LICENSE
+*.md
+
+# -- docker files (avoid recursive copy)
+Dockerfile
+compose.yml
+.dockerignore
+
+# -- misc
+*.log
+*.tmp
+.cache/
