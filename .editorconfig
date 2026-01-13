@@ -1,0 +1,20 @@
+# -- editorconfig
+root = true
+
+# -- default: lf everywhere
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# -- markdown: keep trailing whitespace if needed
+[*.md]
+trim_trailing_whitespace = false
+
+# -- images: do not apply text rules
+[*.{png,jpg,jpeg,webp,ico,svg}]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
