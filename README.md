@@ -1,58 +1,66 @@
-# PERUVIAN SALES AND SERVICES CORPORATION S.A.C.
+# -- peruvian sales and services corporation s.a.c.
 
-Sitio web corporativo desarrollado con Astro, React, Tailwind CSS y componentes estilo shadcn/ui.
+sitio web corporativo desarrollado con astro, react, tailwind css y componentes estilo shadcn/ui.
 
-## 🚀 Características
+## -- características
 
-- ⚡ **Astro** - Framework moderno de contenido estático
-- ⚛️ **React** - Componentes interactivos (formulario de contacto)
-- 🎨 **Tailwind CSS** - Utilidades CSS de última generación
-- 🧩 **Componentes shadcn/ui** - UI components elegantes y accesibles
-- 📱 **Responsive** - Diseño adaptable a todos los dispositivos
-- 🎭 **Animaciones** - Transiciones suaves y efectos visuales
-- 🌙 **Tema moderno** - Diseño profesional con gradientes y glassmorphism
+- astro - framework moderno de contenido estático
+- react - componentes interactivos (formulario de contacto)
+- tailwind css - utilidades css de última generación
+- componentes shadcn/ui - ui components elegantes y accesibles
+- lucide react - iconos modernos y consistentes
+- responsive - diseño adaptable a todos los dispositivos
+- animaciones - transiciones suaves y efectos visuales
+- tema moderno - diseño profesional con gradientes y glassmorphism
+- configuración centralizada - archivo config.ts para fácil actualización
 
-## 📦 Instalación
+## -- instalación
 
 ```bash
-# Instalar dependencias
+# -- instalar dependencias
 npm install
 
-# Iniciar servidor de desarrollo
+# -- iniciar servidor de desarrollo
 npm run dev
 
-# Construir para producción
+# -- construir para producción
 npm run build
 
-# Vista previa de producción
+# -- vista previa de producción
 npm run preview
 ```
 
-## 📁 Estructura del Proyecto
+## -- estructura del proyecto
 
 ```
 /
 ├── public/
-│   └── favicon.svg
+│   ├── favicon.ico
+│   └── logo.png
 ├── src/
 │   ├── components/
-│   │   ├── ui/              # Componentes shadcn-style
+│   │   ├── ui/                    # -- componentes shadcn-style
 │   │   │   ├── Button.tsx
 │   │   │   ├── Card.tsx
 │   │   │   ├── Input.tsx
 │   │   │   └── Textarea.tsx
+│   │   ├── icons/                 # -- iconos lucide
+│   │   │   └── index.ts
 │   │   ├── Header.astro
 │   │   ├── Hero.astro
 │   │   ├── About.astro
 │   │   ├── Services.astro
+│   │   ├── ServiceCard.tsx        # -- tarjeta de servicio react
 │   │   ├── Products.astro
 │   │   ├── Contact.astro
-│   │   ├── ContactForm.tsx  # Formulario React interactivo
+│   │   ├── ContactForm.tsx        # -- formulario react interactivo
 │   │   └── Footer.astro
+│   ├── config/
+│   │   └── site.config.ts         # -- configuración centralizada
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── lib/
-│   │   └── utils.ts         # Utilidad cn() para clases
+│   │   └── utils.ts               # -- utilidad cn() para clases
 │   ├── pages/
 │   │   └── index.astro
 │   └── styles/
@@ -63,11 +71,50 @@ npm run preview
 └── package.json
 ```
 
-## 🎨 Personalización
+## -- configuración centralizada
 
-### Colores
+toda la información de la empresa se encuentra en `src/config/site.config.ts`. aquí puedes actualizar:
 
-Edita `tailwind.config.mjs` para cambiar los colores principales:
+### -- información de la empresa
+
+- nombre y razón social
+- ruc y datos tributarios
+- fechas de inscripción
+- estado y condición
+
+### -- información de contacto
+
+- teléfono
+- whatsapp
+- email
+
+### -- dirección
+
+- calle
+- urbanización
+- distrito, provincia, departamento
+
+### -- redes sociales
+
+- facebook
+- instagram
+- linkedin
+- whatsapp
+
+### -- servicios y productos
+
+- lista de servicios con descripciones
+- catálogo de productos por categoría
+
+### -- seo
+
+- título
+- descripción
+- palabras clave
+
+## -- personalización de colores
+
+edita `tailwind.config.mjs` para cambiar los colores principales:
 
 ```js
 colors: {
@@ -77,65 +124,62 @@ colors: {
 }
 ```
 
-### Fuentes
+## -- fuentes
 
-Las fuentes se cargan desde Google Fonts en `global.css`:
-- **Display**: Poppins
-- **Body**: Inter
+las fuentes se cargan desde google fonts en `global.css`:
 
-### Información de Contacto
+- display: poppins
+- body: inter
 
-Actualiza la información en:
-- `Contact.astro` - Dirección, teléfono, email
-- `Footer.astro` - Información del pie de página
-- `Hero.astro` - RUC y estadísticas
+## -- formulario de contacto
 
-## 📧 Formulario de Contacto
+el formulario actualmente simula el envío. para conectarlo a un backend real:
 
-El formulario actualmente simula el envío. Para conectarlo a un backend real:
+1. edita `src/components/ContactForm.tsx`
+2. reemplaza la simulación en `handleSubmit` con tu api
+3. opciones recomendadas:
+   - formspree
+   - netlify forms
+   - api personalizada
 
-1. Edita `ContactForm.tsx`
-2. Reemplaza la simulación en `handleSubmit` con tu API
-3. Opciones recomendadas:
-   - Formspree
-   - Netlify Forms
-   - API personalizada
+## -- despliegue
 
-## 🚀 Despliegue
+### -- vercel
 
-### Vercel
 ```bash
 npm run build
-# Sube la carpeta dist/
+# -- sube la carpeta dist/
 ```
 
-### Netlify
+### -- netlify
+
 ```bash
 npm run build
-# Sube la carpeta dist/
+# -- sube la carpeta dist/
 ```
 
-### GitHub Pages
+### -- github pages
+
 ```bash
 npm run build
-# Configura GitHub Pages para servir desde dist/
+# -- configura github pages para servir desde dist/
 ```
 
-## 📄 Datos de la Empresa
+## -- datos de la empresa
 
-- **Razón Social**: PERUVIAN SALES AND SERVICES CORPORATION S.A.C.
-- **RUC**: 20612417327
-- **Tipo**: Sociedad Anónima Cerrada
-- **Estado**: ACTIVO - HABIDO
-- **Ubicación**: Jr. Huáscar 253, Urb. Partido Alto, San Martín - Tarapoto
-- **Actividades**:
-  - CIIU 4663: Venta al por mayor de materiales de construcción y ferretería
-  - CIIU 4651: Venta al por mayor de equipos informáticos
-  - CIIU 6202: Consultoría de informática
+- razon social: peruvian sales and services corporation s.a.c.
+- ruc: 20612417327
+- tipo: sociedad anónima cerrada
+- estado: activo - habido
+- ubicacion: jr. huáscar 253, urb. partido alto, san martín - tarapoto
+- actividades:
+  - ciiu 4663: venta al por mayor de materiales de construcción y ferretería
+  - ciiu 4651: venta al por mayor de equipos informáticos
+  - ciiu 6202: consultoría de informática
 
-## 📝 Licencia
+## -- licencia
 
-Este proyecto está desarrollado para PERUVIAN SALES AND SERVICES CORPORATION S.A.C.
+este proyecto está desarrollado para peruvian sales and services corporation s.a.c.
 
 ---
 

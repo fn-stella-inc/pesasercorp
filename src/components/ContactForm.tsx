@@ -1,7 +1,9 @@
+// -- componente de formulario de contacto con iconos lucide
 import React, { useState } from 'react';
 import { Button } from './ui/Button';
 import { Input } from './ui/Input';
 import { Textarea } from './ui/Textarea';
+import { Send, CheckCircle, Loader2 } from 'lucide-react';
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -24,11 +26,13 @@ export function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
+    // -- simular envío del formulario
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     setIsSubmitting(false);
     setSubmitted(true);
     
+    // -- resetear después de 3 segundos
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
@@ -42,13 +46,12 @@ export function ContactForm() {
     }, 3000);
   };
 
+  // -- estado de éxito
   if (submitted) {
     return (
       <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-12 text-center border border-green-100">
         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
+          <CheckCircle className="w-10 h-10 text-green-600" />
         </div>
         <h3 className="text-2xl font-bold text-green-800 mb-2">¡Mensaje Enviado!</h3>
         <p className="text-green-600">Nos pondremos en contacto contigo pronto.</p>
@@ -165,18 +168,13 @@ export function ContactForm() {
       >
         {isSubmitting ? (
           <span className="flex items-center gap-2">
-            <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-            </svg>
+            <Loader2 className="w-5 h-5 animate-spin" />
             Enviando...
           </span>
         ) : (
           <span className="flex items-center gap-2">
             Enviar Mensaje
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
+            <Send className="w-5 h-5" />
           </span>
         )}
       </Button>

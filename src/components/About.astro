@@ -1,39 +1,36 @@
 ---
+// -- sección nosotros/about con información desde config
+import { siteConfig } from '../config/site.config';
 
+const { empresa, direccion } = siteConfig;
 ---
 
 <section id="nosotros" class="py-24 bg-white relative overflow-hidden">
-  <!-- Background decorations -->
+  <!-- background decorations -->
   <div class="absolute top-0 right-0 w-96 h-96 bg-primary-50 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
   <div class="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
   
   <div class="container mx-auto px-4 lg:px-8 relative z-10">
     <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Image/Visual Side -->
+      <!-- image/visual side -->
       <div class="relative order-2 lg:order-1">
         <div class="relative">
-          <!-- Main Image Container -->
+          <!-- main image container con logo -->
           <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-            <div class="aspect-[4/3] bg-gradient-to-br from-primary-600 to-primary-800 relative">
-              <!-- Pattern overlay -->
+            <div class="aspect-[4/3] bg-gradient-to-br from-primary-600 to-primary-800 relative flex items-center justify-center">
+              <!-- pattern overlay -->
               <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
               
-              <!-- Content inside -->
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center text-white p-8">
-                  <div class="w-24 h-24 mx-auto bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6">
-                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-                  <h3 class="text-2xl font-bold mb-2">Desde 2024</h3>
-                  <p class="text-white/80">Construyendo confianza</p>
-                </div>
-              </div>
+              <!-- logo grande -->
+              <img 
+                src="/logo.png" 
+                alt={empresa.nombre}
+                class="w-48 h-48 object-contain relative z-10"
+              />
             </div>
           </div>
           
-          <!-- Floating Stats Card -->
+          <!-- floating stats card -->
           <div class="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
             <div class="flex items-center gap-4">
               <div class="w-14 h-14 bg-gradient-to-br from-accent to-accent-light rounded-xl flex items-center justify-center">
@@ -48,12 +45,12 @@
             </div>
           </div>
           
-          <!-- Decorative element -->
+          <!-- decorative element -->
           <div class="absolute -top-4 -left-4 w-24 h-24 border-4 border-accent/30 rounded-2xl"></div>
         </div>
       </div>
       
-      <!-- Content Side -->
+      <!-- content side -->
       <div class="order-1 lg:order-2">
         <div class="inline-flex items-center gap-2 bg-primary-50 text-primary-600 rounded-full px-4 py-2 text-sm font-medium mb-6">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -67,18 +64,18 @@
         </h2>
         
         <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-          <strong class="text-navy">PERUVIAN SALES AND SERVICES CORPORATION S.A.C.</strong> es una empresa peruana 
+          <strong class="text-navy">{empresa.nombre}</strong> es una empresa peruana 
           comprometida con brindar soluciones integrales en tres pilares fundamentales: construcción, 
           tecnología y consultoría informática.
         </p>
         
         <p class="text-gray-600 mb-8 leading-relaxed">
-          Con sede en Tarapoto, San Martín, nos especializamos en la venta de materiales de construcción, 
+          Con sede en {direccion.distrito}, {direccion.departamento}, nos especializamos en la venta de materiales de construcción, 
           artículos de ferretería, equipos de cómputo y software, además de ofrecer servicios profesionales 
           de consultoría en TI para impulsar el crecimiento de tu negocio.
         </p>
         
-        <!-- Features List -->
+        <!-- features list -->
         <div class="grid sm:grid-cols-2 gap-4 mb-8">
           <div class="flex items-start gap-3 p-4 bg-gray-50 rounded-xl hover:bg-primary-50 transition-colors">
             <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -87,8 +84,8 @@
               </svg>
             </div>
             <div>
-              <h4 class="font-semibold text-navy">Estado Activo</h4>
-              <p class="text-sm text-gray-500">Habido ante SUNAT</p>
+              <h4 class="font-semibold text-navy">Estado {empresa.estado}</h4>
+              <p class="text-sm text-gray-500">{empresa.condicion} ante SUNAT</p>
             </div>
           </div>
           
@@ -100,7 +97,7 @@
             </div>
             <div>
               <h4 class="font-semibold text-navy">Facturación Electrónica</h4>
-              <p class="text-sm text-gray-500">Desde Agosto 2024</p>
+              <p class="text-sm text-gray-500">Desde {empresa.emisorElectronicoDesde}</p>
             </div>
           </div>
           
@@ -113,7 +110,7 @@
             </div>
             <div>
               <h4 class="font-semibold text-navy">Ubicación Estratégica</h4>
-              <p class="text-sm text-gray-500">San Martín - Tarapoto</p>
+              <p class="text-sm text-gray-500">{direccion.departamento} - {direccion.distrito}</p>
             </div>
           </div>
           
@@ -125,7 +122,7 @@
             </div>
             <div>
               <h4 class="font-semibold text-navy">Experiencia</h4>
-              <p class="text-sm text-gray-500">Operando desde Enero 2024</p>
+              <p class="text-sm text-gray-500">Operando desde {empresa.fechaInicioActividades}</p>
             </div>
           </div>
         </div>

@@ -1,20 +1,24 @@
 ---
+// -- sección de contacto con información desde config
+import { siteConfig } from '../config/site.config';
 import ContactForm from './ContactForm';
+
+const { empresa, contacto, direccion } = siteConfig;
 ---
 
 <section id="contacto" class="py-24 bg-gradient-to-br from-slate-900 via-primary-900 to-navy-dark relative overflow-hidden">
-  <!-- Background Elements -->
+  <!-- background elements -->
   <div class="absolute inset-0">
     <div class="absolute top-20 right-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-float"></div>
     <div class="absolute bottom-20 left-20 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl animate-float" style="animation-delay: 2s;"></div>
     
-    <!-- Grid Pattern -->
+    <!-- grid pattern -->
     <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); background-size: 60px 60px;"></div>
   </div>
   
   <div class="container mx-auto px-4 lg:px-8 relative z-10">
     <div class="grid lg:grid-cols-2 gap-16 items-start">
-      <!-- Contact Info -->
+      <!-- contact info -->
       <div class="text-white">
         <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm mb-6">
           <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -30,9 +34,9 @@ import ContactForm from './ContactForm';
           Escríbenos y nuestro equipo te atenderá a la brevedad.
         </p>
         
-        <!-- Contact Cards -->
+        <!-- contact cards -->
         <div class="space-y-6">
-          <!-- Location -->
+          <!-- location -->
           <div class="flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-colors group">
             <div class="w-14 h-14 bg-gradient-to-br from-accent to-accent-light rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,13 +46,13 @@ import ContactForm from './ContactForm';
             </div>
             <div>
               <h3 class="font-semibold text-white text-lg mb-1">Ubicación</h3>
-              <p class="text-gray-400">Jr. Huáscar Nro. 253</p>
-              <p class="text-gray-400">Urb. Partido Alto San Martín</p>
-              <p class="text-gray-400">San Martín - Tarapoto</p>
+              <p class="text-gray-400">{direccion.calle}</p>
+              <p class="text-gray-400">{direccion.urbanizacion}</p>
+              <p class="text-gray-400">{direccion.departamento} - {direccion.distrito}</p>
             </div>
           </div>
           
-          <!-- Phone -->
+          <!-- phone -->
           <div class="flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-colors group">
             <div class="w-14 h-14 bg-gradient-to-br from-primary-400 to-primary-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,13 +61,13 @@ import ContactForm from './ContactForm';
             </div>
             <div>
               <h3 class="font-semibold text-white text-lg mb-1">Teléfono</h3>
-              <a href="tel:+51999999999" class="text-gray-400 hover:text-accent transition-colors">
-                +51 999 999 999
+              <a href={`tel:${contacto.telefono.replace(/\s/g, '')}`} class="text-gray-400 hover:text-accent transition-colors">
+                {contacto.telefono}
               </a>
             </div>
           </div>
           
-          <!-- Email -->
+          <!-- email -->
           <div class="flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-colors group">
             <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,13 +76,13 @@ import ContactForm from './ContactForm';
             </div>
             <div>
               <h3 class="font-semibold text-white text-lg mb-1">Correo</h3>
-              <a href="mailto:ventas@peruviansales.pe" class="text-gray-400 hover:text-accent transition-colors">
-                ventas@peruviansales.pe
+              <a href={`mailto:${contacto.email}`} class="text-gray-400 hover:text-accent transition-colors">
+                {contacto.email}
               </a>
             </div>
           </div>
           
-          <!-- RUC Info -->
+          <!-- ruc info -->
           <div class="flex items-start gap-4 p-5 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:border-white/20 transition-colors group">
             <div class="w-14 h-14 bg-gradient-to-br from-violet-400 to-violet-500 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,14 +91,14 @@ import ContactForm from './ContactForm';
             </div>
             <div>
               <h3 class="font-semibold text-white text-lg mb-1">RUC</h3>
-              <p class="text-gray-400 font-mono">20612417327</p>
-              <p class="text-sm text-green-400 mt-1">✓ Estado: ACTIVO - HABIDO</p>
+              <p class="text-gray-400 font-mono">{empresa.ruc}</p>
+              <p class="text-sm text-green-400 mt-1">Estado: {empresa.estado} - {empresa.condicion}</p>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- Contact Form -->
+      <!-- contact form -->
       <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-2xl">
         <h3 class="text-2xl font-bold text-navy mb-2">Envíanos un mensaje</h3>
         <p class="text-gray-600 mb-8">Completa el formulario y te responderemos pronto.</p>

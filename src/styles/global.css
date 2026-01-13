@@ -1,9 +1,11 @@
+/* -- importar fuentes de google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* -- estilos base */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -18,7 +20,9 @@
   }
 }
 
+/* -- componentes personalizados */
 @layer components {
+  /* -- botón primario */
   .btn-primary {
     @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white 
            bg-gradient-to-r from-primary-500 to-primary-600 rounded-full
@@ -27,12 +31,14 @@
            shadow-lg hover:shadow-xl;
   }
   
+  /* -- botón secundario */
   .btn-secondary {
     @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold 
            text-primary-600 bg-white border-2 border-primary-500 rounded-full
            hover:bg-primary-50 transform hover:scale-105 transition-all duration-300;
   }
   
+  /* -- botón accent */
   .btn-accent {
     @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white 
            bg-gradient-to-r from-accent to-accent-light rounded-full
@@ -41,37 +47,45 @@
            shadow-lg hover:shadow-xl animate-pulse-glow;
   }
   
+  /* -- tarjeta */
   .card {
     @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500
            border border-gray-100 overflow-hidden;
   }
   
+  /* -- tarjeta con hover */
   .card-hover {
     @apply hover:-translate-y-2 hover:border-accent/30;
   }
   
+  /* -- título de sección */
   .section-title {
     @apply text-4xl md:text-5xl font-bold text-navy mb-4;
   }
   
+  /* -- subtítulo de sección */
   .section-subtitle {
     @apply text-lg text-gray-600 max-w-2xl mx-auto;
   }
   
+  /* -- texto con gradiente */
   .gradient-text {
     @apply bg-gradient-to-r from-primary-500 via-primary-600 to-accent bg-clip-text text-transparent;
   }
   
+  /* -- efecto glass */
   .glass {
     @apply bg-white/80 backdrop-blur-lg border border-white/20;
   }
 }
 
+/* -- utilidades personalizadas */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
   
+  /* -- delays para animaciones */
   .animate-delay-100 { animation-delay: 100ms; }
   .animate-delay-200 { animation-delay: 200ms; }
   .animate-delay-300 { animation-delay: 300ms; }
@@ -80,7 +94,7 @@
   .animate-delay-600 { animation-delay: 600ms; }
 }
 
-/* Custom scrollbar */
+/* -- scrollbar personalizado */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -98,7 +112,7 @@
   background: linear-gradient(to bottom, #1e3a8a, #d97706);
 }
 
-/* Noise texture overlay */
+/* -- textura de ruido para fondos */
 .noise-bg::before {
   content: '';
   position: absolute;
